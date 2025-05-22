@@ -286,7 +286,7 @@ user_input = ""
 if mode == "List of URLs":
     user_input = st.text_area("Enter a list of URLs (one per line)")
     proxy = st.selectbox("Select proxy type", options=list(proxy.keys()), format_func=lambda x: proxy[x])
-    country = st.selectbox("Select country", options=list(proxy_countries.keys()), format_func=lambda x: proxy_countries[x])
+    proxy_country = st.selectbox("Select country", options=list(proxy_countries.keys()), format_func=lambda x: proxy_countries[x])
 
 elif mode == "Google SERP Keywords":
     user_input = st.text_area("Enter keywords (one query per line)")
@@ -310,7 +310,7 @@ if st.button("Run"):
 
         if mode == "List of URLs":
             urls = keywords
-            results = run_scraping(urls, api_key, proxy_countries.upper(), proxy)
+            results = run_scraping(urls, api_key, proxy_country.upper(), proxy)
 
         elif mode == "Google SERP Keywords":
             urls = get_sites_from_serp(keywords, api_key, country, language, num_res)
