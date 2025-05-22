@@ -67,13 +67,17 @@ def normalize_url(url):
     return url
 
 def universe_url(url):
-    url = url.strip().lower()
-    if not url.startswith("http"):
-        url = "http://" + url
-    url = url.replace("https://", "http://")
-    url = url.replace("www.", "")
-    if url.endswith("/"):
-        url = url[:-1]
+    try:
+        url = url.strip().lower()
+        if not url.startswith("http"):
+            url = "http://" + url
+        url = url.replace("https://", "http://")
+        url = url.replace("www.", "")
+        if url.endswith("/"):
+            url = url[:-1]
+
+    except Exception as e:
+        pass
     return url
 
 nest_asyncio.apply()
