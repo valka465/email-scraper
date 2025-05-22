@@ -1,6 +1,6 @@
 # 🔎 Streamlit Email Scraper
 This is a simple, free tool built using HasData’s scraping APIs to extract email addresses and business contact data from websites, Google SERP, or Google Maps based on user-defined keywords or URLs.
-![Email Scraper Preview](email-scraper.png)
+![Email Scraper Preview](email_scraper.png)
 
 
 ## 🚀 Features
